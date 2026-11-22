@@ -1,0 +1,1576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="referrer"content="strict-origin-when-cross-origin">
+    <title>Yoga</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- favicon -->
+     <link rel="shortcut icon" href="https://wallpaperbat.com/img/218365-yoga-background-wallpaper.jpg" type="image/x-icon">
+     <!-- bootstrap -->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+      <!-- font-awesome -->
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css" integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+       
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f8f5;
+            color: #222;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        .navbar {
+            background-color: #ffffff;
+            padding: 18px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+
+        .navbar-brand {
+            font-size: 25px;
+            font-weight: 700;
+            color: #4d6848 !important;
+        }
+
+        .navbar-brand i {
+            margin-right: 7px;
+        }
+
+        .nav-link {
+            color: #333 !important;
+            font-weight: 500;
+            margin: 0 10px;
+        }
+
+        .nav-link:hover {
+            color: #6c8b63 !important;
+        }
+
+        .btn-book {
+            background-color: #58734f;
+            color: white;
+            border-radius: 30px;
+            padding: 10px 25px;
+            border: none;
+        }
+
+        .btn-book:hover {
+            background-color: #3f5838;
+            color: white;
+        }
+
+        /* ================= HOME ================= */
+
+        .home {
+            min-height: 90vh;
+            background:
+                linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.45)),
+                url("https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=1600&q=80");
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+        }
+
+        .home-content {
+            color: white;
+            max-width: 650px;
+        }
+
+        .home-content h1 {
+            font-size: 65px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .home-content p {
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .home-btn {
+            background-color: #d6a85f;
+            color: white;
+            padding: 13px 32px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+        }
+
+        .home-btn:hover {
+            background-color: #bd8e46;
+            color: white;
+        }
+
+        /* ================= ABOUT ================= */
+
+        .about {
+            padding: 90px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title span {
+            color: #6c8b63;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .section-title h2 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-top: 10px;
+        }
+
+        .about-img {
+            width: 100%;
+            height: 520px;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+
+        .about-content {
+            padding: 20px;
+        }
+
+        .about-content h3 {
+            font-size: 32px;
+            font-weight: 700;
+            color: #4d6848;
+            margin-bottom: 20px;
+        }
+
+        .about-content p {
+            color: #666;
+            line-height: 1.9;
+            font-size: 15px;
+            margin-bottom: 15px;
+        }
+
+        .about-btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 12px 28px;
+            background-color: #58734f;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+        }
+
+        .about-btn:hover {
+            background-color: #3f5838;
+            color: white;
+        }
+
+        
+        /* ================= ACHIEVEMENTS ================= */
+
+        .achievements {
+            padding: 90px 0;
+            background-color: #e8eee3;
+        }
+
+        .achievement-box {
+            background-color: white;
+            padding: 35px 20px;
+            text-align: center;
+            border-radius: 15px;
+            height: 100%;
+            transition: 0.3s;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+        }
+
+        .achievement-box:hover {
+            transform: translateY(-8px);
+        }
+
+        .achievement-icon {
+            width: 65px;
+            height: 65px;
+            margin: auto;
+            margin-bottom: 20px;
+            background-color: #dfe8da;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #58734f;
+            font-size: 28px;
+        }
+
+        .achievement-box h3 {
+            font-size: 38px;
+            font-weight: 700;
+            color: #4d6848;
+            margin-bottom: 8px;
+        }
+
+        .achievement-box p {
+            margin: 0;
+            color: #666;
+            font-size: 16px;
+        }
+
+        .trial-btn {
+            display: inline-block;
+            margin-top: 45px;
+            padding: 14px 32px;
+            background-color: #58734f;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+        }
+
+        .trial-btn:hover {
+            background-color: #3f5838;
+            color: white;
+        }
+       
+       /* ================= HABUILD ================= */
+
+.habuild-section {
+    background-color: #f5f1e8;
+    padding: 100px 0 !important;
+}
+
+.section-label {
+    color: #58734f;
+    font-weight: 600;
+    letter-spacing: 2px;
+    font-size: 14px;
+}
+
+.habuild-title {
+    font-size: 45px;
+    font-weight: 700;
+    color: #30452c;
+    line-height: 1.2;
+}
+
+.habuild-text {
+    color: #666;
+    line-height: 1.9;
+    font-size: 15px;
+    margin-top: 20px;
+}
+
+.habuild-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 13px 28px;
+    background-color: #58734f;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 500;
+}
+
+.habuild-btn:hover {
+    background-color: #3f5838;
+    color: white;
+}
+
+.habuild-stat {
+    background-color: white;
+    padding: 30px 15px;
+    text-align: center;
+    border-radius: 15px;
+    height: 100%;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+    transition: 0.3s;
+}
+
+.habuild-stat:hover {
+    transform: translateY(-7px);
+}
+
+.habuild-stat i {
+    font-size: 35px;
+    color: #58734f;
+    margin-bottom: 15px;
+}
+
+.habuild-stat h3 {
+    font-size: 30px;
+    font-weight: 700;
+    color: #4d6848;
+}
+
+.habuild-stat p {
+    color: #777;
+    margin: 0;
+}
+
+
+/*  BENEFITS  */
+
+.benefits-section {
+    background-color: #ffffff;
+    padding: 100px 0 !important;
+}
+
+.benefit-card {
+    background-color: #f8f8f5;
+    border-radius: 18px;
+    overflow: hidden;
+    height: 100%;
+    transition: 0.3s;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+}
+
+.benefit-card:hover {
+    transform: translateY(-8px);
+}
+
+.benefit-image {
+    height: 250px;
+    overflow: hidden;
+}
+
+.benefit-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.4s;
+}
+
+.benefit-card:hover .benefit-image img {
+    transform: scale(1.05);
+}
+
+.benefit-content {
+    padding: 30px;
+    text-align: center;
+}
+
+.benefit-icon {
+    width: 60px;
+    height: 60px;
+    margin: -60px auto 20px;
+    position: relative;
+    background-color: #58734f;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    border: 5px solid #f8f8f5;
+}
+
+.benefit-content h3 {
+    font-size: 25px;
+    font-weight: 600;
+    color: #4d6848;
+    margin-bottom: 15px;
+}
+
+.benefit-content p {
+    color: #666;
+    line-height: 1.8;
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+/* ================= WATCH DEMO ================= */
+
+.demo-section {
+    background-color: #e8eee3;
+    padding: 100px 0 !important;
+}
+
+.demo-video {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.demo-video iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+
+/* TESTIMONIALS  */
+
+.testimonial-section {
+    background-color: #f8f8f5;
+    padding: 100px 0 !important;
+}
+
+.testimonial-card {
+    background-color: white;
+    padding: 35px;
+    border-radius: 18px;
+    height: 100%;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+    transition: 0.3s;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-8px);
+}
+
+.quote {
+    color: #58734f;
+    font-size: 40px;
+    line-height: 1;
+}
+
+.stars {
+    color: #d6a85f;
+    font-size: 20px;
+    margin: 15px 0;
+    letter-spacing: 3px;
+}
+
+.testimonial-card p {
+    color: #666;
+    font-size: 15px;
+    line-height: 1.9;
+    margin-bottom: 25px;
+}
+
+.member {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.member img {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.member h5 {
+    margin: 0;
+    color: #4d6848;
+    font-weight: 600;
+}
+
+.member small {
+    color: #888;
+}
+/*FAQ  */
+
+.faq-section {
+    background-color: #e8eee3;
+    padding: 100px 0 !important;
+}
+
+.accordion-item {
+    border: none;
+    margin-bottom: 15px;
+    border-radius: 12px !important;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.accordion-button {
+    padding: 22px 25px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #30452c;
+    background-color: white;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: #58734f;
+    color: white;
+    box-shadow: none;
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+}
+
+.accordion-body {
+    padding: 22px 25px;
+    color: #666;
+    line-height: 1.8;
+    background-color: white;
+}
+
+
+
+
+
+
+
+
+</style>
+</head>
+<body> 
+    <!-- navbar -->
+  <nav class="navbar navbar-expand-lg sticky-top">
+
+    <div class="container">
+
+        <a class="navbar-brand" href="#">
+            <i class="bi bi-flower1"></i>
+            Rise With Yoga
+        </a>
+
+        <!-- Mobile Menu Button -->
+        <button class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarMenu">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+
+        <div class="collapse navbar-collapse" id="navbarMenu">
+
+            <ul class="navbar-nav ms-auto align-items-lg-center">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#home">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About Us</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#achievements">
+                        Achievements
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#benefits">Benefits</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Demo section</a>
+                </li>
+
+                <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+                    <a href="#" class="btn btn-book">
+                        Book Now
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</nav>
+
+      <section class="home" id="home">
+
+    <div class="container">
+
+        <div class="home-content">
+
+            <h1>
+                Find Your<br>
+                Inner Peace
+            </h1>
+
+            <p>
+                Begin your journey towards a healthier body,
+                peaceful mind and balanced life through the
+                power of yoga.
+            </p>
+
+            <a href="#about" class="home-btn">
+                Book Your Session
+                <i class="bi bi-arrow-right"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="about" id="about">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>About Us</span>
+
+            <h2>
+                Rise With Yoga
+            </h2>
+
+        </div>
+
+
+        <div class="row align-items-center">
+
+            <!-- Image -->
+
+            <div class="col-lg-6">
+
+                <img
+                    src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=900&q=80"
+                    class="about-img"
+                    alt="Yoga">
+
+            </div>
+
+
+            <!-- Content -->
+
+            <div class="col-lg-6">
+
+                <div class="about-content">
+
+                    <h3>
+                        Transform Your Mind,
+                        Body & Soul
+                    </h3>
+
+                    <p>
+                        Begin each morning with purpose and positivity
+                        through the transformative practice of yoga.
+                        Yoga is more than just physical exercise—it is
+                        a journey toward harmony between the body,
+                        mind, and spirit.
+                    </p>
+
+                    <p>
+                        Our yoga sessions are thoughtfully designed
+                        for individuals of all skill levels. Improve
+                        flexibility, build strength and develop inner
+                        calm with expert guidance.
+                    </p>
+
+                    <p>
+                        Through guided stretches, breathing exercises
+                        and mindful movement, yoga helps release
+                        tension while improving posture, balance and
+                        concentration.
+                    </p>
+
+                    <p>
+                        Join our welcoming community and discover a
+                        healthier and more balanced lifestyle,
+                        one breath and one movement at a time.
+                    </p>
+
+                    <a href="#" class="about-btn">
+                        Learn More
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>  
+
+
+<section class="achievements" id="achievements">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>Our Achievements</span>
+
+            <h2>
+                Growing Together
+            </h2>
+
+            <p class="text-muted mt-3">
+                Our journey is powered by our amazing
+                yoga community.
+            </p>
+
+        </div>
+
+
+        <div class="row g-4">
+
+
+            <!-- Achievement 1 -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="achievement-box">
+
+                    
+
+                    <h3>3000+</h3>
+
+                    <p>Yoga Classes</p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Achievement 2 -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="achievement-box">
+
+                    
+
+                    <h3>1500+</h3>
+
+                    <p>Happy Members</p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Achievement 3 -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="achievement-box">
+
+                    
+
+                    <h3>50+</h3>
+
+                    <p>Expert Trainers</p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Achievement 4 -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="achievement-box">
+
+                   
+
+                    <h3>10+</h3>
+
+                    <p>Years Experience</p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Achievement 5 -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="achievement-box">
+
+                   
+
+                    <h3>100+</h3>
+
+                    <p>Workshops Conducted</p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Achievement 6 -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="achievement-box">
+
+                  
+
+                    <h3>25+</h3>
+
+                    <p>Awards Won</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Trial Button -->
+
+        <div class="text-center">
+
+            <a href="#" class="trial-btn">
+
+                Start Your 7 Day Free Trial
+
+                <i class="bi bi-arrow-right"></i>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!--  WELCOME TO HABUILD  -->
+
+<section class="habuild-section py-5">
+
+    <div class="container">
+
+        <div class="row align-items-center">
+
+            <!-- Left Content -->
+
+            <div class="col-lg-6">
+
+                <span class="section-label">
+                    WELCOME TO HABUILD
+                </span>
+
+                <h2 class="habuild-title mt-3">
+                    Trusted by Members
+                    <br>
+                    Worldwide
+                </h2>
+
+                <p class="habuild-text">
+                    Join a growing community of people who are
+                    transforming their lives through yoga. Our
+                    programs are designed to make yoga simple,
+                    accessible and enjoyable for everyone.
+                </p>
+
+                <p class="habuild-text">
+                    Whether you are a beginner or an experienced
+                    practitioner, our expert trainers will guide
+                    you throughout your wellness journey.
+                </p>
+
+                <a href="#" class="habuild-btn">
+                    Join Our Community
+                    <i class="bi bi-arrow-right"></i>
+                </a>
+
+            </div>
+
+
+            <!-- Right Statistics -->
+
+            <div class="col-lg-6 mt-5 mt-lg-0">
+
+                <div class="row g-4">
+
+                    <div class="col-6">
+
+                        <div class="habuild-stat">
+
+                            <i class="bi bi-people-fill"></i>
+
+                            <h3>1.87 Cr+</h3>
+
+                            <p>
+                                Community Members
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-6">
+
+                        <div class="habuild-stat">
+
+                            <i class="bi bi-calendar-heart"></i>
+
+                            <h3>14+</h3>
+
+                            <p>
+                                Years Experience
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-6">
+
+                        <div class="habuild-stat">
+
+                            <i class="bi bi-star-fill"></i>
+
+                            <h3>4.9/5</h3>
+
+                            <p>
+                                Google Rating
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-6">
+
+                        <div class="habuild-stat">
+
+                            <i class="bi bi-heart-pulse-fill"></i>
+
+                            <h3>100%</h3>
+
+                            <p>
+                                Wellness Focused
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!--BENEFITS  -->
+
+<section class="benefits-section py-5">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>WHY YOGA?</span>
+
+            <h2>
+                Benefits of Yoga
+            </h2>
+
+            <p class="text-muted mt-3">
+                Discover how yoga can transform your body
+                and improve your everyday life.
+            </p>
+
+        </div>
+
+
+        <div class="row g-4">
+
+
+            <!-- Benefit 1 -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="benefit-card">
+
+                    <div class="benefit-image">
+
+                        <img
+                        src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80"
+                        alt="Be Calm">
+
+                    </div>
+
+                    <div class="benefit-content">
+
+                        
+
+                        <h3>Be Calm</h3>
+
+                        <p>
+                            Reduce stress and anxiety through
+                            mindful breathing, meditation and
+                            relaxing yoga movements.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Benefit 2 -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="benefit-card">
+
+                    <div class="benefit-image">
+
+                        <img
+                        src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&w=800&q=80"
+                        alt="Become Flexible">
+
+                    </div>
+
+                    <div class="benefit-content">
+
+                        
+
+                        <h3>Become Flexible</h3>
+
+                        <p>
+                            Improve your flexibility, balance and
+                            mobility with regular yoga practice
+                            and guided stretching.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Benefit 3 -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="benefit-card">
+
+                    <div class="benefit-image">
+
+                        <img
+                        src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=800&q=80"
+                        alt="Burn Fat">
+
+                    </div>
+
+                    <div class="benefit-content">
+
+                        
+
+                        <h3>Burn Fat</h3>
+
+                        <p>
+                            Stay active and build strength while
+                            supporting a healthy body through
+                            consistent yoga practice.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!--  WATCH DEMO  -->
+
+<section class="demo-section py-5">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>WATCH DEMO</span>
+
+            <h2>Experience Our Yoga Session</h2>
+
+            <p class="text-muted mt-3">
+                Take a look at our yoga sessions and discover
+                how we can help you begin your wellness journey.
+            </p>
+
+        </div>
+
+       
+
+<div class="row justify-content-center">
+    <div class="col-lg-9">
+        <div class="demo-video">
+           <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/cxm0zdZDLeE?si=AxGxb1hojSDFyugv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+    </div>
+</div>
+
+
+
+        </div>
+
+    </div>
+
+</section>
+
+<!--TESTIMONIALS  -->
+
+<section class="testimonial-section py-5">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>TESTIMONIALS</span>
+
+            <h2>What Our Members Say</h2>
+
+            <p class="text-muted mt-3">
+                Real experiences from our wonderful yoga community.
+            </p>
+
+        </div>
+
+
+        <div class="row g-4">
+
+
+            <!-- Testimonial 1 -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="testimonial-card">
+
+                    <div class="quote">
+                        <i class="bi bi-quote"></i>
+                    </div>
+
+                    
+                    <p>
+                        Yoga has completely changed my lifestyle.
+                        I feel more energetic, peaceful and
+                        confident after joining the sessions.
+                    </p>
+
+                    <div class="member">
+
+                        <img
+                        src="https://randomuser.me/api/portraits/women/44.jpg"
+                        alt="Member">
+
+                        <div>
+                            <h5>Ananya</h5>
+                            <small>Yoga Member</small>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Testimonial 2 -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="testimonial-card">
+
+                    <div class="quote">
+                        <i class="bi bi-quote"></i>
+                    </div>
+
+                    
+
+                    <p>
+                        The trainers are very supportive and
+                        friendly. The classes helped me improve
+                        my flexibility and reduce daily stress.
+                    </p>
+
+                    <div class="member">
+
+                        <img
+                        src="https://randomuser.me/api/portraits/women/65.jpg"
+                        alt="Member">
+
+                        <div>
+                            <h5>Meera</h5>
+                            <small>Yoga Member</small>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Testimonial 3 -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="testimonial-card">
+
+                    <div class="quote">
+                        <i class="bi bi-quote"></i>
+                    </div>
+
+                   
+
+                    <p>
+                        I love the positive atmosphere of the
+                        community. Every session motivates me to
+                        take better care of my mind and body.
+                    </p>
+
+                    <div class="member">
+
+                        <img
+                        src="https://randomuser.me/api/portraits/men/32.jpg"
+                        alt="Member">
+
+                        <div>
+                            <h5>Rahul</h5>
+                            <small>Yoga Member</small>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FAQ  -->
+
+<section class="faq-section py-5" id="faq">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>FAQ</span>
+
+            <h2>Frequently Asked Questions</h2>
+
+            <p class="text-muted mt-3">
+                Find answers to some of the most common questions
+                about our yoga classes.
+            </p>
+
+        </div>
+
+        <div class="row justify-content-center">
+
+            <div class="col-lg-9">
+
+                <div class="accordion" id="faqAccordion">
+
+                    <!-- Question 1 -->
+                    <div class="accordion-item">
+
+                        <h2 class="accordion-header">
+
+                            <button class="accordion-button"
+                                    type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#faq1">
+
+                                Is yoga suitable for beginners?
+
+                            </button>
+
+                        </h2>
+
+                        <div id="faq1"
+                             class="accordion-collapse collapse show"
+                             data-bs-parent="#faqAccordion">
+
+                            <div class="accordion-body">
+
+                                Yes. Our yoga sessions are suitable for
+                                beginners as well as experienced
+                                practitioners. Our trainers guide you
+                                step by step.
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Question 2 -->
+                    <div class="accordion-item">
+
+                        <h2 class="accordion-header">
+
+                            <button class="accordion-button collapsed"
+                                    type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#faq2">
+
+                                How often should I practice yoga?
+
+                            </button>
+
+                        </h2>
+
+                        <div id="faq2"
+                             class="accordion-collapse collapse"
+                             data-bs-parent="#faqAccordion">
+
+                            <div class="accordion-body">
+
+                                Practicing yoga regularly is recommended.
+                                Even 20 to 30 minutes a day can help
+                                improve flexibility, strength and
+                                relaxation.
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Question 3 -->
+                    <div class="accordion-item">
+
+                        <h2 class="accordion-header">
+
+                            <button class="accordion-button collapsed"
+                                    type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#faq3">
+
+                                Do I need any previous yoga experience?
+
+                            </button>
+
+                        </h2>
+
+                        <div id="faq3"
+                             class="accordion-collapse collapse"
+                             data-bs-parent="#faqAccordion">
+
+                            <div class="accordion-body">
+
+                                No previous experience is required.
+                                Our classes are designed for people
+                                at different fitness and experience
+                                levels.
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Question 4 -->
+                    <div class="accordion-item">
+
+                        <h2 class="accordion-header">
+
+                            <button class="accordion-button collapsed"
+                                    type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#faq4">
+
+                                What should I bring to a yoga class?
+
+                            </button>
+
+                        </h2>
+
+                        <div id="faq4"
+                             class="accordion-collapse collapse"
+                             data-bs-parent="#faqAccordion">
+
+                            <div class="accordion-body">
+
+                                Wear comfortable clothes and bring a
+                                yoga mat, water bottle and a positive
+                                attitude.
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Question 5 -->
+                    <div class="accordion-item">
+
+                        <h2 class="accordion-header">
+
+                            <button class="accordion-button collapsed"
+                                    type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#faq5">
+
+                                Can I join yoga classes online?
+
+                            </button>
+
+                        </h2>
+
+                        <div id="faq5"
+                             class="accordion-collapse collapse"
+                             data-bs-parent="#faqAccordion">
+
+                            <div class="accordion-body">
+
+                                Yes. You can participate in our online
+                                sessions from the comfort of your home
+                                using your mobile phone or computer.
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+<footer class="bg-body-tertiary text-center my-5">
+  <div class="container">
+
+        <div class="section-title">
+
+            <span>RISE WITH YOGA</span>
+
+            <h2></h2>
+  <h3 class="text-bold text-center"></h3>
+  <p  class="text-center">Transform your mind, body, and soul through the power of yoga.</p>
+  <!-- Grid container -->
+  <div class="container p-4 pb-0">
+    
+    <!-- Section: Social media -->
+    <section class="mb-4">
+      <!-- Facebook -->
+      <a
+      data-mdb-ripple-init
+        class="btn text-white btn-floating m-1"
+        style="background-color:  #4d6848;"
+        href="#!"
+        role="button"
+        ><i class="fab fa-facebook-f"></i
+      ></a>
+
+      <!-- Twitter -->
+      <a
+        data-mdb-ripple-init
+        class="btn text-white btn-floating m-1"
+        style="background-color:  #4d6848;"
+        href="#!"
+        role="button"
+        ><i class="fab fa-twitter"></i
+      ></a>
+
+      <!-- Google -->
+      <a
+        data-mdb-ripple-init
+        class="btn text-white btn-floating m-1"
+        style="background-color:  #4d6848;"
+        href="#!"
+        role="button"
+        ><i class="fab fa-google"></i
+      ></a>
+
+      <!-- Instagram -->
+      <a
+        data-mdb-ripple-init
+        class="btn text-white btn-floating m-1"
+        style="background-color:  #4d6848;"
+        href="#!"
+        role="button"
+        ><i class="fab fa-instagram"></i
+      ></a>
+
+      <!-- Linkedin -->
+      <a
+        data-mdb-ripple-init
+        class="btn text-white btn-floating m-1"
+        style="background-color: #4d6848;"
+        href="#!"
+        role="button"
+        ><i class="fab fa-linkedin-in"></i
+      ></a>
+      <!-- Github -->
+      <a
+        data-mdb-ripple-init
+        class="btn text-white btn-floating m-1"
+        style="background-color: #4d6848;"
+        href="#!"
+        role="button"
+        ><i class="fab fa-github"></i
+      ></a>
+    </section>
+    <!-- Section: Social media -->
+  </div>
+  <!-- Grid container -->
+  
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+    © 2026
+    <a class="text-body text-decoration-none" href="https://mdbootstrap.com/"> Rise With Yoga. All Rights Reserved.</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+
+
+
+
+
+
+
+     
+
+
+
+
+        </body>
+</html>
